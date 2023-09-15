@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <!-- <h1>Hello world!! {{a}}</h1> -->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col m-5 p-5">
+                    <form action="http://127.0.0.1:5000/" method="GET">
+                        <legend class="text-center display-2">
+                            Iris Prediction
+                        </legend>
+                        <div class="mb-3">
+                            <label for="petal_lenth" class="form-label"
+                                >Petal Length</label
+                            >
+                            <input
+                                type="number"
+                                step="0.01"
+                                id="petal_lenth"
+                                name="petal_lenth"
+                                class="form-control"
+                                placeholder="Enter petal length "
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="petal_width" class="form-label"
+                                >Petal width</label
+                            >
+                            <input
+                                type="number"
+                                step="0.01"
+                                id="petal_width"
+                                name="petal_width"
+                                class="form-control"
+                                placeholder="Enter petal wwidth "
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="sepal_lenth" class="form-label"
+                                >Sepal Length</label
+                            >
+                            <input
+                                type="number"
+                                step="0.01"
+                                id="sepal_lenth"
+                                name="sepal_lenth"
+                                class="form-control"
+                                placeholder="Enter sepal length "
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="sepal_width" class="form-label"
+                                >Sepal width</label
+                            >
+                            <input
+                                type="number"
+                                step="0.01"
+                                id="sepal_width"
+                                name="sepal_width"
+                                class="form-control"
+                                placeholder="Enter SePal width "
+                            />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </form>
+                    {% if prediction %} 
+                        {% if prediction == 0 %}
+                            <h1 class="text-center">prediction: Sertosa!</h1>
+                        {% elif prediction == 1 %}
+                            <h1 class="text-center">prediction: versicolor!</h1>
+                        {% else %}
+                            <h1 class="text-center">prediction: verginica!</h1>
+                        {% endif %} 
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
